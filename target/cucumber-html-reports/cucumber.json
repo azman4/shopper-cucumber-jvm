@@ -1,0 +1,195 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-09-02T10:34:17.996Z",
+        "line": 12,
+        "name": "Login to the learn platform",
+        "description": "",
+        "id": "learn-platform;login-to-the-learn-platform;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 499173000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ueducation.StepDefinitions.LearnerExperience.LoginSteps.end()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5658588000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User launches the \"learnUrl\" site",
+            "match": {
+              "arguments": [
+                {
+                  "val": "learnUrl",
+                  "offset": 19
+                }
+              ],
+              "location": "ueducation.StepDefinitions.LearnerExperience.LoginSteps.launch_app(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 502258000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User enters \"internal.student@upgrad.com\" and \"upgrad123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"internal.student@upgrad.com\"",
+                  "offset": 12
+                },
+                {
+                  "val": "\"upgrad123\"",
+                  "offset": 46
+                }
+              ],
+              "location": "ueducation.StepDefinitions.LearnerExperience.LoginSteps.enter_credentials(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 79756000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User clicks on login button",
+            "match": {
+              "location": "ueducation.StepDefinitions.LearnerExperience.LoginSteps.click_login()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3944011000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Choose a program page should be displayed",
+            "match": {
+              "location": "ueducation.StepDefinitions.LearnerExperience.CourseSelectionSteps.verify_homepage()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@LearnLogin"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-09-02T10:34:28.865Z",
+        "line": 13,
+        "name": "Login to the learn platform",
+        "description": "",
+        "id": "learn-platform;login-to-the-learn-platform;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 435949000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ueducation.StepDefinitions.LearnerExperience.LoginSteps.end()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4983157000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User launches the \"learnUrl\" site",
+            "match": {
+              "arguments": [
+                {
+                  "val": "learnUrl",
+                  "offset": 19
+                }
+              ],
+              "location": "ueducation.StepDefinitions.LearnerExperience.LoginSteps.launch_app(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 749089000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User enters \"azman.ansari+student@upgrad.com\" and \"upgrad123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"azman.ansari+student@upgrad.com\"",
+                  "offset": 12
+                },
+                {
+                  "val": "\"upgrad123\"",
+                  "offset": 50
+                }
+              ],
+              "location": "ueducation.StepDefinitions.LearnerExperience.LoginSteps.enter_credentials(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 85568000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User clicks on login button",
+            "match": {
+              "location": "ueducation.StepDefinitions.LearnerExperience.LoginSteps.click_login()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3035156000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Choose a program page should be displayed",
+            "match": {
+              "location": "ueducation.StepDefinitions.LearnerExperience.CourseSelectionSteps.verify_homepage()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@LearnLogin"
+          }
+        ]
+      }
+    ],
+    "name": "Learn Platform",
+    "description": "",
+    "id": "learn-platform",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/FeatureFiles/LearnerExperience/Login.feature",
+    "tags": []
+  }
+]

@@ -1,0 +1,61 @@
+plugins {
+    id("io.qameta.allure") version "2.8.1"
+}
+apply plugin: 'java'
+group 'com.cucumber-allure-gradle-integration'
+version '1.0-SNAPSHOT'
+
+def cucumberVersion = '6.11.0'
+def allureVersion = '2.14.0'
+def allurePluginVersion = '2.8.1'
+def seleniumVersion = '3.141.59'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.cucumber:cucumber-java:' + cucumberVersion
+    implementation 'io.cucumber:cucumber-junit:' + cucumberVersion
+    implementation group: 'io.qameta.allure', name: 'allure-cucumber6-jvm', version: "${allureVersion}"
+    implementation 'org.seleniumhq.selenium:selenium-java:' + seleniumVersion
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:' + seleniumVersion
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom implementation
+    }
+}
+
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--tags', '@ShopperE2E',
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:reports/testreport.html',
+                    '--plugin', 'io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm',
+                    '--glue', 'weatherShopper',
+                    'src/test/resources']
+        }
+    }
+}
+
+task generateAllureReport(type: Exec) {
+    commandLine 'allure', 'generate' ,'-c'
+    doLast {
+        println "Report Generated!"
+    }
+}
+
+allure {
+    version = allurePluginVersion
+    autoconfigure = true
+}
+
+cucumber.finalizedBy 'allureReport'
