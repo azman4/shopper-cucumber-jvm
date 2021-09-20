@@ -38,9 +38,6 @@ This global installation is required in order for the application to function pr
 
 > Build your gradle project (Go to gradle tab and build the project)
 
-This command downloads/updates the browser drivers.
-
-
 ## Usage
 
 •	Clone this repo
